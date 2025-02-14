@@ -1,0 +1,73 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n1,n2,m1,m2,a[20][20],c[20][20],b[20][20],k,i,j;
+clrscr();
+printf("enter the value of n\n");
+scanf("%d",&n1);
+printf("enter the value of m\n");
+scanf("%d",&m1);
+printf("enter the value of n\n");
+scanf("%d",&n2);
+printf("enter the value of m\n");
+scanf("%d",&m2);
+if(n2!=m1)
+  printf("multiplication not possible");
+else
+{
+printf("enter the first matrix\n");
+for(i=0;i<n1;i++)
+ {
+  for(j=0;j<m1;j++)
+   {
+    scanf("%d",&a[i][j]);
+   }
+ }
+  printf("enter the second matrix\n");
+  for(i=0;i<n2;i++)
+ {
+  for(j=0;j<m2;j++)
+   {
+    scanf("%d",&b[i][j]);
+   }
+ }
+ printf("the first matrix\n");
+ for(i=0;i<n1;i++)
+ {
+  for(j=0;j<m1;j++)
+   {
+    printf("%d\t",a[i][j]);
+   }
+  printf("\n");
+  }
+  printf("the second matrix is\n");
+  for(i=0;i<n2;i++)
+ {
+  for(j=0;j<m2;j++)
+   {
+    printf("%d\t",b[i][j]);
+   }
+ printf("\n");
+ }
+  for(i=0;i<n1;i++)
+ {
+  for(j=0;j<m2;j++)
+   {
+    c[i][j]=0;
+    for(k=0;k<m1;k++)
+      c[i][j]+=a[i][k]*b[k][j];
+   }
+ }
+  printf("multiplication of matrix is\n");
+  for(i=0;i<n1;i++)
+ {
+  for(j=0;j<m2;j++)
+   {
+    printf("%d\t",c[i][j]);
+   }
+ printf("\n");
+ }
+}
+ getch();
+}
